@@ -1,4 +1,4 @@
-FROM https://github.com/corbinhibbs/n8n-personal.git
+FROM n8nio/n8n:latest
 
 USER root
 
