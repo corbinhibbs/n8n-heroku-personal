@@ -11,16 +11,17 @@ pnpm run build
 cd ../n8n-heroku-personal
 
 echo "📁 Copying custom nodes to build context..."
-# Remove existing copy if it exists
-rm -rf ./n8n-nodes-starter
+# Remove existing copy if it exists (force removal)
+rm -rf ./n8n-nodes-starter 2>/dev/null || true
 # Copy the entire n8n-nodes-starter folder into the build context
 cp -r ../n8n-nodes-starter ./n8n-nodes-starter
 
 # Clean up problematic files/folders that might cause Docker build issues
 echo "🧹 Cleaning up copied folder..."
-rm -rf ./n8n-nodes-starter/.git
-rm -rf ./n8n-nodes-starter/node_modules
-rm -rf ./n8n-nodes-starter/dist
+rm -rf ./n8n-nodes-starter/.git 2>/dev/null || true
+# Use find to remove node_modules more reliably
+find ./n8n-nodes-starter -name "node_modules" -type d -exec rm -rf {} + 2>/dev/null || true
+rm -rf ./n8n-nodes-starter/dist 2>/dev/null || true
 
 echo "🐳 Building Docker image locally (optional test)..."
 # Uncomment the next line if you want to test locally first
