@@ -1,0 +1,24 @@
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
+*.md
+
+# Node modules (will be installed in container)
+../n8n-nodes-starter/node_modules
+../n8n-nodes-starter/.git
+
+# Build artifacts that will be regenerated
+../n8n-nodes-starter/dist
+
+# IDE and editor files
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db 
