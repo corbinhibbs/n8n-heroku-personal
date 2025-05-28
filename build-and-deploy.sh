@@ -22,7 +22,7 @@ echo "🐳 Building Docker image locally (optional test)..."
 
 echo "🧹 Cleaning up build context..."
 # Remove the copied folder to keep the repo clean
-rm -rf ./n8n-nodes-starter
+# rm -rf ./n8n-nodes-starter
 
 echo "🚀 Deploying to Heroku..."
 git add .
