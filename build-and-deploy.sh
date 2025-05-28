@@ -24,7 +24,7 @@ rm -rf ./n8n-nodes-starter/dist
 
 echo "🐳 Building Docker image locally (optional test)..."
 # Uncomment the next line if you want to test locally first
-docker build -t n8n-custom .
+# docker build -t n8n-custom .
 
 echo "🚀 Deploying to Heroku..."
 # Add the copied n8n-nodes-starter to git for Heroku deployment
