@@ -33,8 +33,8 @@ git commit -m "Deploy n8n with custom nodes - $(date)"
 git push
 
 echo "🧹 Cleaning up build context..."
-# Remove the copied folder after deployment
-git rm -r ./n8n-nodes-starter
+# Remove the copied folder after deployment (force removal)
+git rm -rf ./n8n-nodes-starter
 git commit -m "Clean up n8n-nodes-starter after deployment"
 
 echo "✅ Deployment complete!"
