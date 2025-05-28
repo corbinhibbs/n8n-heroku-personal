@@ -18,17 +18,17 @@ cp -r ../n8n-nodes-starter ./n8n-nodes-starter
 
 echo "🐳 Building Docker image locally (optional test)..."
 # Uncomment the next line if you want to test locally first
-# docker build -t n8n-custom .
+docker build -t n8n-custom .
 
 echo "🧹 Cleaning up build context..."
 # Remove the copied folder to keep the repo clean
-# rm -rf ./n8n-nodes-starter
+rm -rf ./n8n-nodes-starter
 
-echo "🚀 Deploying to Heroku..."
-git add .
-git commit -m "Deploy n8n with custom nodes - $(date)"
-git push
+# echo "🚀 Deploying to Heroku..."
+# git add .
+# git commit -m "Deploy n8n with custom nodes - $(date)"
+# git push
 
-echo "✅ Deployment complete!"
-echo "🌐 Your n8n instance should be available at your Heroku app URL"
-echo "📝 Custom nodes from n8n-nodes-starter should now be available in n8n" 
+# echo "✅ Deployment complete!"
+# echo "🌐 Your n8n instance should be available at your Heroku app URL"
+# echo "📝 Custom nodes from n8n-nodes-starter should now be available in n8n" 
