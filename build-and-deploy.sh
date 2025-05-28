@@ -30,7 +30,7 @@ echo "🚀 Deploying to Heroku..."
 # Add the copied n8n-nodes-starter to git for Heroku deployment
 git add .
 git commit -m "Deploy n8n with custom nodes - $(date)"
-git push heroku main
+git push
 
 echo "🧹 Cleaning up build context..."
 # Remove the copied folder after deployment
