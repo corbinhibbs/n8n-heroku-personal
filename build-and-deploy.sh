@@ -10,9 +10,19 @@ pnpm install
 pnpm run build
 cd ../n8n-heroku-personal
 
+echo "📁 Copying custom nodes to build context..."
+# Remove existing copy if it exists
+rm -rf ./n8n-nodes-starter
+# Copy the entire n8n-nodes-starter folder into the build context
+cp -r ../n8n-nodes-starter ./n8n-nodes-starter
+
 echo "🐳 Building Docker image locally (optional test)..."
 # Uncomment the next line if you want to test locally first
 # docker build -t n8n-custom .
+
+echo "🧹 Cleaning up build context..."
+# Remove the copied folder to keep the repo clean
+rm -rf ./n8n-nodes-starter
 
 echo "🚀 Deploying to Heroku..."
 git add .

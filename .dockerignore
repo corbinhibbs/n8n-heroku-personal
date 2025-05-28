@@ -6,12 +6,15 @@
 README.md
 *.md
 
-# Node modules (will be installed in container)
+# Node modules from outside build context (will be installed in container)
 ../n8n-nodes-starter/node_modules
 ../n8n-nodes-starter/.git
 
-# Build artifacts that will be regenerated
+# Build artifacts from outside build context (will be regenerated)
 ../n8n-nodes-starter/dist
+
+# But allow the copied n8n-nodes-starter in build context
+!./n8n-nodes-starter
 
 # IDE and editor files
 .vscode

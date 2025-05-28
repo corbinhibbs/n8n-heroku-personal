@@ -8,13 +8,15 @@ RUN apk add --no-cache python3 make g++
 # Create directory for custom nodes
 RUN mkdir -p /home/node/.n8n/custom
 
-# Copy custom nodes source
-COPY ../n8n-nodes-starter /home/node/.n8n/custom/n8n-nodes-starter
+# Copy custom nodes source (assuming it's copied into the build context)
+COPY ./n8n-nodes-starter /home/node/.n8n/custom/n8n-nodes-starter
 
 # Build and install the custom nodes
 WORKDIR /home/node/.n8n/custom/n8n-nodes-starter
-RUN npm install
-RUN npm run build
+# Install all dependencies including dev dependencies for building (force to skip prompts)
+RUN pnpm install --force
+# Build using pnpm
+RUN pnpm run build
 
 # Set proper ownership
 RUN chown -R node:node /home/node/.n8n
