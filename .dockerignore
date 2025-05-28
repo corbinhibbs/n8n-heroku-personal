@@ -16,6 +16,9 @@ README.md
 # But allow the copied n8n-nodes-starter in build context
 !./n8n-nodes-starter
 
+# Exclude git from copied n8n-nodes-starter
+./n8n-nodes-starter/.git
+
 # IDE and editor files
 .vscode
 .idea
