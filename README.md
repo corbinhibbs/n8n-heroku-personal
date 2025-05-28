@@ -17,7 +17,7 @@ This is a [Heroku](https://heroku.com/)-focused container implementation of [n8n
 ## Quick Deploy
 
 Use the **Deploy to Heroku** button above to launch n8n on Heroku. When deploying, make sure to check all configuration options and adjust them to your needs. It's especially important to set `N8N_ENCRYPTION_KEY` to a random secure value.
-
+##
 ## Custom Deployment with Your Nodes
 
 1. **Prepare your custom nodes:**
