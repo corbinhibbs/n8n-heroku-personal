@@ -27,7 +27,7 @@ rm -rf ./n8n-nodes-starter
 echo "🚀 Deploying to Heroku..."
 git add .
 git commit -m "Deploy n8n with custom nodes - $(date)"
-git push heroku main
+git push
 
 echo "✅ Deployment complete!"
 echo "🌐 Your n8n instance should be available at your Heroku app URL"
