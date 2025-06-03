@@ -1,4 +1,4 @@
-import { INodeType, INodeTypeDescription, IExecuteFunctions, NodeConnectionType } from 'n8n-workflow';
+import { INodeType, INodeTypeDescription, IExecuteFunctions, NodeConnectionType, NodeOperationError } from 'n8n-workflow';
 import ytsr from '@distube/ytsr';
 import { YoutubeTranscript } from 'youtube-transcript';
 
@@ -55,7 +55,7 @@ export class YouTubeSearch implements INodeType {
 
 				returnData.push({ json: { videos } });
 			} catch (error) {
-				throw new Error(`YouTube search failed: ${error.message}`);
+				throw new NodeOperationError(this.getNode(), `YouTube search failed: ${error.message}`);
 			}
 		}
 

@@ -1,15 +1,15 @@
 {
   "name": "n8n-nodes-starter",
   "version": "0.1.0",
-  "description": "",
+  "description": "Custom n8n nodes for YouTube search and other integrations",
   "keywords": [
     "n8n-community-node-package"
   ],
   "license": "MIT",
   "homepage": "",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "Your Name",
+    "email": "your.email@example.com"
   },
   "repository": {
     "type": "git",
@@ -20,12 +20,12 @@
   },
   "main": "index.js",
   "scripts": {
-    "build": "npx rimraf dist && tsc && gulp build:icons",
-    "dev": "tsc --watch",
-    "format": "prettier nodes credentials --write",
-    "lint": "eslint nodes credentials package.json",
-    "lintfix": "eslint nodes credentials package.json --fix",
-    "prepublishOnly": "npm build && npm lint -c .eslintrc.prepublish.js nodes credentials package.json"
+    "build": "pnpm exec rimraf dist && pnpm exec tsc && pnpm exec gulp build:icons",
+    "dev": "pnpm exec tsc --watch",
+    "format": "pnpm exec prettier nodes credentials --write",
+    "lint": "pnpm exec eslint nodes credentials package.json",
+    "lintfix": "pnpm exec eslint nodes credentials package.json --fix",
+    "prepublishOnly": "pnpm run build && pnpm run lint -c .eslintrc.prepublish.js nodes credentials package.json"
   },
   "files": [
     "dist"

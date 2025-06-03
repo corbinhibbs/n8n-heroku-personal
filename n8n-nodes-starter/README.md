@@ -27,15 +27,29 @@ These are the basic steps for working with the starter. For detailed guidance on
    ```
    git clone https://github.com/<your organization>/<your-repo-name>.git
    ```
-3. Run `npm i` to install dependencies.
+3. Run `pnpm install` to install dependencies.
 4. Open the project in your editor.
 5. Browse the examples in `/nodes` and `/credentials`. Modify the examples, or replace them with your own nodes.
 6. Update the `package.json` to match your details.
-7. Run `npm lint` to check for errors or `npm lintfix` to automatically fix errors when possible.
+7. Run `pnpm run lint` to check for errors or `pnpm run lintfix` to automatically fix errors when possible.
 8. Test your node locally. Refer to [Run your node locally](https://docs.n8n.io/integrations/creating-nodes/test/run-node-locally/) for guidance.
 9. Replace this README with documentation for your node. Use the [README_TEMPLATE](README_TEMPLATE.md) to get started.
 10. Update the LICENSE file to use your details.
 11. [Publish](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) your package to npm.
+
+## Quick Start with pnpm
+
+To build your custom nodes:
+```bash
+# Install dependencies
+pnpm install
+
+# Build the nodes
+pnpm run build
+
+# Or use the provided script
+./build-and-deploy.sh
+```
 
 ## More information
 
